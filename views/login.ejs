@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <form class = "login" action="/login" method="post">
+        <h1>Login</h1>
+         <label for="email">Email</label>
+        <input class="input1" type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+        <br>
+        <label for="password">Password:</label>
+        <input class="input1" type="password" id="password" name="password" minlength="6"  required>
+        
+        <br><input type="checkbox" id="showPassword"><span>Show Password</span>
+        <br>
+        <button type="submit">Login</button>
+    </form>
+    <script>
+    const passwordField = document.getElementById("password");
+    const togglePassword = document.getElementById("showPassword");
+
+    togglePassword.addEventListener("change", () => {
+        passwordField.type = togglePassword.checked ? "text" : "password";
+    });
+</script>
+</body>
+</html>
