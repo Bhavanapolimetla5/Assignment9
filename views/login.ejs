@@ -7,25 +7,30 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <form class = "login" action="/login" method="post">
-        <h1>Login</h1>
-         <label for="email">Email</label>
-        <input class="input1" type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
-        <br>
-        <label for="password">Password:</label>
-        <input class="input1" type="password" id="password" name="password" minlength="6"  required>
-        
-        <br><input type="checkbox" id="showPassword"><span>Show Password</span>
-        <br>
-        <button type="submit">Login</button>
-    </form>
-    <script>
-    const passwordField = document.getElementById("password");
-    const togglePassword = document.getElementById("showPassword");
+    <form class="login" action="/login" method="post">
+  <h1>Login</h1>
+  <label for="loginEmail">Email</label>
+  <input class="input1" type="email" id="loginEmail" name="email"
+         pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+  <br>
 
-    togglePassword.addEventListener("change", () => {
-        passwordField.type = togglePassword.checked ? "text" : "password";
-    });
+  <label for="loginPassword">Password:</label>
+  <input class="input1" type="password" id="loginPassword" name="password" minlength="6" required>
+  <br>
+
+  <input type="checkbox" id="showLoginPassword"><span>Show Password</span>
+  <br>
+
+  <button type="submit">Login</button>
+</form>
+
+<script>
+  const loginPasswordField = document.getElementById("loginPassword");
+  const toggleLoginPassword = document.getElementById("showLoginPassword");
+
+  toggleLoginPassword.addEventListener("change", () => {
+    loginPasswordField.type = toggleLoginPassword.checked ? "text" : "password";
+  });
 </script>
 </body>
 </html>
